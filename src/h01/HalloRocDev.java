@@ -6,6 +6,6 @@ package h01;
 public class HalloRocDev {
 
     public static void main(String[] args) {
-        System.out.println("Hallo cohort 0!");
+        System.out.println("Hallo cohort 0!!");
     }
 }
