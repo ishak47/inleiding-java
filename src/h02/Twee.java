@@ -9,11 +9,10 @@ public class Twee extends Applet {
         setBackground(Color.white);
     }
 
-
     public void paint(Graphics g) {
         g.setColor(Color.blue);
-        g.drawString("ishak", 950, 430);
+        g.drawString("Ishak", 950, 430);
             g.setColor(Color.red);
-            g.drawString("jmilou",950, 450);
+            g.drawString("Jmilou",950, 450);
     }
 }
