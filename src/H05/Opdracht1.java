@@ -35,7 +35,6 @@ public class Opdracht1 extends Applet {
         g.drawRect(50,100,breedte,hoogte);
         g.drawString("rechthoek",165,270);
 
-
         //gevulde rechthoek met ovaal
         g.setColor(opvulkleur);
         g.drawRect(450,100,breedte,hoogte);

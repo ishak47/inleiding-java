@@ -11,7 +11,7 @@ public class Opdracht2 extends Applet {
     Color opvulkleur3;
     Color lijnkleur;
     Color achtergrond;
-    int hoogte1,hoogte2, hoogte3,hoogte4, breedte;
+    int hoogte1,hoogte2, hoogte3,hoogte4,breedte;
 
     public void init() {
         //initialisatie
