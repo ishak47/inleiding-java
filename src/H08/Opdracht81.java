@@ -13,8 +13,8 @@ public class Opdracht81 extends Applet {
 
     public void init() {
         tekstvak = new TextField("", 30);
-        //hierop drukken knop
-        knop = new Button("hierop drukken");
+        //ok knop
+        knop = new Button("ok");
         knop.addActionListener(new KnopListener());
 
         //resetknop
