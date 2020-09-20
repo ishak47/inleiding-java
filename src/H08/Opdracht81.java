@@ -12,16 +12,18 @@ public class Opdracht81 extends Applet {
     String tekstje;
 
     public void init() {
-        tekstvak = new TextField("", 30);
+
         //ok knop
         knop = new Button("ok");
         knop.addActionListener(new KnopListener());
-
+        add(knop);
         //resetknop
         resetknop = new Button("reset");
         resetknop.addActionListener(new KnopListener2());
-        add(knop);
         add(resetknop);
+
+        //tekstvak
+        tekstvak = new TextField("", 30);
         add(tekstvak);
         tekstje ="";
     }
