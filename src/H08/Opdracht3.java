@@ -35,7 +35,7 @@ public class Opdracht3 extends Applet {
     }
 
     public void paint(Graphics g) {
-    setBackground(Color.blue);
+    setBackground(Color.red);
         g.drawString("Bedrag met 21% BTW= " + Bedrag,50,60);
 
 
