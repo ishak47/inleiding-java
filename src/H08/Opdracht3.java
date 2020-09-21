@@ -12,25 +12,30 @@ public class Opdracht3 extends Applet {
     Label label;
     double getal;
     String s;
-    double uitkomst;
 
     public void init() {
     okknop=new Button("ok");
+    okknop.setLabel("ok");
+    okknop.addActionListener(new KnopListener());
     add(okknop);
-    tekstvak=new TextField("",30);
+
+    //tekstvak
+    tekstvak=new TextField("type hier",30);
     tekstvak.addActionListener(new TekstvakListener());
     add(tekstvak);
+
+    //label
     label=new Label("type een getal");
     add(label);
-    uitkomst=getal/100*121;
     }
 
     public void paint(Graphics g) {
-    //g.drawString("");
+
 
     }
     class TekstvakListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            okknop.setLocation(20,20);
             s = tekstvak.getText();
             getal = Double.parseDouble( s);
             repaint();
