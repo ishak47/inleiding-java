@@ -1,43 +1,52 @@
 package H08;
 
-import javax.swing.*;
+
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Opdracht3 extends Applet {
-    Button okknop;
-    TextField tekstvak;
+    Button Okknop;
+    TextField Tekstvak;
     Label label;
-    double getal;
+    double Bedrag;
     String s;
 
-    public void init() {
-    okknop=new Button("ok");
-    okknop.setLabel("ok");
-    okknop.addActionListener(new KnopListener());
-    add(okknop);
 
-    //tekstvak
-    tekstvak=new TextField("type hier",30);
-    tekstvak.addActionListener(new TekstvakListener());
-    add(tekstvak);
+    public void init() {
+
+    Bedrag=0;
+    Okknop=new Button("oke");
+    Okknop.setLabel("ok");
+    Okknop.addActionListener(new KnopListener());
+    add(Okknop);
+
+        Okknop.addActionListener(new BTW());
+
+        //tekstvak
+    Tekstvak=new TextField("haal dit weg en type een cijfer ",30);
+    Tekstvak.addActionListener(new TekstvakListener());
+    add(Tekstvak);
 
     //label
-    label=new Label("type een getal");
+    label=new Label("€");
     add(label);
     }
 
     public void paint(Graphics g) {
+    setBackground(Color.blue);
+        g.drawString("Bedrag met 21% BTW= " + Bedrag,50,60);
 
 
     }
-    class TekstvakListener implements ActionListener {
+    class BTW implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            okknop.setLocation(20,20);
-            s = tekstvak.getText();
-            getal = Double.parseDouble( s);
+            Okknop.setLocation(20,20);
+           s = Tekstvak.getText();
+            Bedrag = Double.parseDouble( s);
+            Bedrag *=1.21;
+
             repaint();
         }
     }
