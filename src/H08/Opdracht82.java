@@ -9,6 +9,7 @@ public class Opdracht82 extends Applet {
     //declareren
     Button personen;
     int counter;
+    int uitkomst;
     TextField tekstvak;
     TextField tekstvak2;
     TextField potentieel;
@@ -64,6 +65,7 @@ public class Opdracht82 extends Applet {
        //totaal
        totaal.setLocation(30,210);
        totaal.setSize(300,40);
+       uitkomst=counter+counter+counter;
     }
 
     class TextToTerminalListener implements ActionListener{
@@ -73,7 +75,7 @@ public class Opdracht82 extends Applet {
             tekstvak.setText("mannen:"+ counter);
             tekstvak2.setText("vrouwen:"+ counter);
             potentieel.setText("potentiële vrouwelijke en mannenlijke leerlingen:"+ counter);
-            totaal.setText("totaal");
+            totaal.setText("totaal"+uitkomst);
             counter++;
             repaint();
         }
