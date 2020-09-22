@@ -29,7 +29,7 @@ public class Opdracht81 extends Applet {
     }
 
 
-    public void paint(Graphics g) {
+      public void paint(Graphics g) {
         knop.setLocation(50,60);
         resetknop.setLocation(50,150);
         resetknop.setSize(300,40);
