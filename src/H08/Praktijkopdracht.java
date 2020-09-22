@@ -41,7 +41,7 @@ public class Praktijkopdracht extends Applet {
         Plus.addActionListener(new PlusAction());
         Min.addActionListener(new MinAction());
 
-
+        //add buttons
         add(Tekstvak1);
         add(Tekstvak2);
         add(Plus);
