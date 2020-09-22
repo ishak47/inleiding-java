@@ -51,6 +51,7 @@ public class Opdracht81 extends Applet {
             repaint();
         }
     }
+
     class KnopListener2 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             Tekstvak.setText("");
