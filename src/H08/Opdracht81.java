@@ -1,21 +1,24 @@
 package H08;
 
+
+
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Opdracht81 extends Applet {
-    TextField tekstvak;
+    TextField Tekstvak;
     Button knop;
     Button resetknop;
-    String tekstje;
+    String S;
+    Label label;
 
     public void init() {
 
-        //ok knop
+        //okknop
         knop = new Button("ok");
-        knop.addActionListener(new KnopListener());
+       knop.addActionListener(new Knoplistener());
         add(knop);
         //resetknop
         resetknop = new Button("reset");
@@ -23,32 +26,38 @@ public class Opdracht81 extends Applet {
         add(resetknop);
 
         //tekstvak
-        tekstvak = new TextField("", 30);
-        add(tekstvak);
-        tekstje ="";
+        Tekstvak = new TextField("", 30);
+        add(Tekstvak);
+        S ="";
+
+        //label
+        label=new Label("type iets");
     }
 
 
       public void paint(Graphics g) {
+        setBackground(Color.orange);
         knop.setLocation(50,60);
         resetknop.setLocation(50,150);
         resetknop.setSize(300,40);
-        tekstvak.setLocation(50,105);
+        Tekstvak.setLocation(50,105);
         knop.setSize(300,40);
-        g.drawString("" +tekstje, 50,140);
+        g.drawString("" + S, 50,140);
 
     }
 
-    class KnopListener implements ActionListener {
+    class Knoplistener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            tekstje = tekstvak.getText();
+            S = Tekstvak.getText();
             repaint();
+
         }
     }
     class KnopListener2 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            tekstvak.setText("");
+            Tekstvak.setText("");
             repaint();
+
         }
     }
 
