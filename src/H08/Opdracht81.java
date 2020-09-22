@@ -34,8 +34,7 @@ public class Opdracht81 extends Applet {
         label=new Label("type iets");
     }
 
-
-     public void paint(Graphics g) {
+    public void paint(Graphics g) {
         setBackground(Color.orange);
         knop.setLocation(50,60);
         resetknop.setLocation(50,150);
