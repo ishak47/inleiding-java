@@ -19,14 +19,14 @@ public class Opdracht3 extends Applet {
     Bedrag=0;
     Okknop=new Button("oke");
     Okknop.setLabel("ok");
-    Okknop.addActionListener(new KnopListener());
+   // Okknop.addActionListener(new Opdracht81.KnopListener());
     add(Okknop);
 
         Okknop.addActionListener(new BTW());
 
         //tekstvak
     Tekstvak=new TextField("haal dit weg en type een cijfer ",30);
-    Tekstvak.addActionListener(new TekstvakListener());
+   // Tekstvak.addActionListener(new TekstvakListener());
     add(Tekstvak);
 
     //label
