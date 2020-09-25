@@ -19,7 +19,7 @@ public class Opdracht2 extends Applet {
 
         //initialisatie
         nummer=1;
-        laagstenummer=0;
+        laagstenummer=1000000000;
         tekstvak1=new TextField("",7);
         tekstvak1.addActionListener(new Tekstvak1Listener());
         label=new Label("type een nummer en druk op enter");
