@@ -1,5 +1,6 @@
 package H10;
 
+import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,27 +13,29 @@ public class Opdracht1 extends Applet {
     double nummer;
     String s;
     Label label;
-    Button ok;
+    Button reset;
 
     public void init() {
     setBackground(Color.yellow);
 
     //initialisatie
-        nummer=6;
+        nummer=0;
         tekstvak1=new TextField("",7);
         tekstvak1.addActionListener(new Tekstvak1Listener());
-        label=new Label("type een nummer en druk op enter");
-        ok=new Button("ok");
-        //add buttons
+        label=new Label("");
+        reset=new Button("reset");
+        reset.addActionListener(new ResetListener());
+
+        //buttons
         add(tekstvak1);
         add(label);
-
+        add(reset);
     }
 
     public void paint(Graphics g) {
-    g.drawString("het hoogste cijfer is op dit moment:"+ nummer,20,80);
-        ok.setLocation(30,30);
-        tekstvak1.setLocation(20,50);
+    g.drawString("het hoogste cijfer is op dit moment:"+ nummer,20,70);
+        tekstvak1.setLocation(20,30);
+    g.drawString("type een nummer en druk op enter" ,20,20);
     }
 
     class Tekstvak1Listener implements ActionListener{
@@ -47,5 +50,11 @@ public class Opdracht1 extends Applet {
         }
     }
 
+    class ResetListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+        tekstvak1.setText("");
+        repaint();
+        }
+    }
 
 }
