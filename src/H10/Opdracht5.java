@@ -16,6 +16,7 @@ public class Opdracht5 extends Applet {
     int aantalcijfers;
     double gemiddelde;
     boolean voldoende;
+    boolean slagen;
     Button ok;
 
     public void init() {
@@ -41,6 +42,7 @@ public class Opdracht5 extends Applet {
         g.drawString("Je gemiddelde cijfer: " + gemiddelde,50,50);
         g.drawString("Aantal cijfers: " + aantalcijfers,50,90);
         g.drawString("Is het cijfer voldoende? " + voldoende,50,70);
+        g.drawString("ben je geslaagd : " + slagen,50,110);
 
     }
 
@@ -49,6 +51,14 @@ public class Opdracht5 extends Applet {
        public void actionPerformed(ActionEvent e) {
            Double cijfer=  Double.parseDouble(tekstvak.getText());
            voldoende = cijfer >= 5.5;
+           slagen= cijfer>= 5.5;
+           gemiddelde= gemiddelde * 10;
+           gemiddelde= ( (gemiddelde * aantalcijfers) + cijfer) / (aantalcijfers + 1);
+           int Gemiddelde = (int) gemiddelde;
+           gemiddelde = Gemiddelde;
+           gemiddelde =gemiddelde / 10;
+           aantalcijfers++;
+           repaint();
         }
     }
 }
