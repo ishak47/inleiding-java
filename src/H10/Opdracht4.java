@@ -44,13 +44,6 @@ public class Opdracht4 extends Applet {
             Dmaand = Double.parseDouble(Smaand);
             Djaar = Double.parseDouble(Sjaar);
 
-
-            if (Dmaand == 1) {
-                Smaand = "januari";
-                Dagen = "31";
-                Uitkomst = "uw gekozen jaar - maand en aantal dagen: " + Djaar +  Smaand + " en " + Dagen + " dagen.";
-            }
-
             if (!(Djaar % 4 == 0 && !(Djaar % 100 == 0)) || Djaar % 400 == 0 && Dmaand == 2) {
                 Smaand = "Februari";
                 Dagen = "28";
@@ -59,6 +52,12 @@ public class Opdracht4 extends Applet {
             if ((Djaar % 4 == 0 && !(Djaar % 100 == 0)) || Djaar % 400 == 0 && Dmaand == 2) {
                 Smaand = "Februari";
                 Dagen = "29";
+                Uitkomst = "uw gekozen jaar - maand en aantal dagen: " + Djaar +  Smaand + " en " + Dagen + " dagen.";
+            }
+
+            if (Dmaand == 1) {
+                Smaand = "januari";
+                Dagen = "31";
                 Uitkomst = "uw gekozen jaar - maand en aantal dagen: " + Djaar +  Smaand + " en " + Dagen + " dagen.";
             }
 
