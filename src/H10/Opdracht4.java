@@ -51,14 +51,14 @@ public class Opdracht4 extends Applet {
                 Uitkomst = "uw gekozen jaar - maand en aantal dagen: " + Djaar +  Smaand + " en " + Dagen + " dagen.";
             }
 
-            if ((Djaar % 4 == 0 && !(Djaar % 100 == 0)) || Djaar % 400 == 0 && Dmaand == 2) {
-                Smaand = "Februari";
-                Dagen = "29";
-                Uitkomst = "uw gekozen maand en aantal dagen: " + Djaar + " " + Smaand + " en " + Dagen + " dagen.";
-            }
             if (!(Djaar % 4 == 0 && !(Djaar % 100 == 0)) || Djaar % 400 == 0 && Dmaand == 2) {
                 Smaand = "Februari";
                 Dagen = "28";
+                Uitkomst = "uw gekozen maand en aantal dagen: " + Djaar + " " + Smaand + " en " + Dagen + " dagen.";
+            }
+            if ((Djaar % 4 == 0 && !(Djaar % 100 == 0)) || Djaar % 400 == 0 && Dmaand == 2) {
+                Smaand = "Februari";
+                Dagen = "29";
                 Uitkomst = "uw gekozen jaar - maand en aantal dagen: " + Djaar +  Smaand + " en " + Dagen + " dagen.";
             }
 
@@ -121,7 +121,7 @@ public class Opdracht4 extends Applet {
                 Dagen = "31";
                 Uitkomst = "uw gekozen jaar - maand en aantal dagen: " + Djaar +  Smaand + " en " + Dagen + " dagen.";
             }
-            if (Dmaand >= 15) {
+            if (Dmaand >= 13) {
                 Uitkomst = "maand bestaat niet";
 
             }
