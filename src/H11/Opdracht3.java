@@ -14,10 +14,11 @@ public class Opdracht3 extends Applet {
         int x = 10;
 
         while (Getal < 100) {
-            x += 35;
-            g.drawString("," + Getal + "," + Getal2,x,20);
+            x += 50;
             Getal += Getal2;
             Getal2 += Getal;
+            g.drawString( " , " + Getal +  " , "  + Getal2,x,50);
+
         }
     }
 }
