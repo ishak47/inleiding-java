@@ -17,17 +17,20 @@ public class Praktijk1 extends Applet {
         a = 0;
         antwoord = 0;
         tekstvak = new TextField("",5);
-        tekstvak.addActionListener(new okbutton());
-        ok = new Button("oké");
-        ok.addActionListener(new okbuttonListener());
+        tekstvak.addActionListener(new OkButtonListener());
+        ok = new Button("ok");
+        ok.addActionListener(new OkButtonListener());
 
         add(tekstvak);
         add(ok);
     }
 
     public void paint(Graphics g) {
-        for (int i = 1; i <= 10 ; i++);{
+        for (int i = 1; i <= 10 ; i++){
             antwoord = a * i;
+            g.drawString("" + antwoord,90,i * 20 + 30 );
+
+
             g.drawString("1 x " + a + "=",50,50);
             g.drawString("2 x " + a + "=",50,70);
             g.drawString("3 x " + a + "=",50,90);
@@ -39,8 +42,12 @@ public class Praktijk1 extends Applet {
             g.drawString("9 x " + a + "=",50,210);
             g.drawString("10 x " +a + "=",45,230);
         }
-
+    }
+    class OkButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            a = Integer.parseInt(tekstvak.getText());
+            repaint();
         }
-
+    }
 
 }
