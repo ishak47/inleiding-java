@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class Opdracht5 extends Applet {
     //Teken vijf vierkanten volgens onderstaand figuur:
+
     public void init() {
     }
 
