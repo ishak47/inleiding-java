@@ -29,8 +29,6 @@ public class Praktijk1 extends Applet {
         for (int i = 1; i <= 10 ; i++){
             antwoord = a * i;
             g.drawString("" + antwoord,90,i * 20 + 30 );
-
-
             g.drawString("1 x " + a + "=",50,50);
             g.drawString("2 x " + a + "=",50,70);
             g.drawString("3 x " + a + "=",50,90);
