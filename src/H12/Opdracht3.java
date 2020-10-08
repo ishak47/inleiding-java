@@ -17,33 +17,42 @@ public class Opdracht3 extends Applet {
     public void init() {
 
     //initialisatie
-        for (int i=0; i!=5; i++){
-            input[i] = new TextField("",5);
-            add(input[i]);
+        for (int n=0; n!=5; n++){
+            input[n] = new TextField("",5);
+            add(input[n]);
         }
         oke=new Button("oke");
         oke.addActionListener(new ButtonListener());
         add(oke);
 
         delete=new Button("delete");
+        delete.addActionListener(new DeleteListener());
         add(delete);
-        delete.setLocation(577,20);
     }
 
     public void paint(Graphics g) {
+        delete.setLocation(340,40);
     }
 
     class ButtonListener implements ActionListener{
 
         public void actionPerformed(ActionEvent e) {
-            for (int i = 0; i != 5; i++) {
-                cijfer[i] = Integer.parseInt(input[i].getText());
+            for (int n = 0; n != 5; n++) {
+                cijfer[n] = Integer.parseInt(input[n].getText());
             }
             Arrays.sort(cijfer);
-            for (int i = 0; i != 5; i++) {
-                input[i].setText(String.valueOf(cijfer[i]));
+            for (int n = 0; n != 5; n++) {
+                input[n].setText(String.valueOf(cijfer[n]));
             }
             repaint();
         }
     }
+
+    class DeleteListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            input[n].setText
+            repaint();
+        }
+    }
+
 }
