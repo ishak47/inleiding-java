@@ -7,7 +7,7 @@ public class Opdracht1 extends Applet {
 
     //declaratie
     double[] gemiddelde;
-    double Uitkomst;
+    double uitkomst;
     double a,b,c,d,e,f,g,h,i,j;
 
     public void init() {
@@ -25,7 +25,7 @@ public class Opdracht1 extends Applet {
         j = 7.5;
 
         gemiddelde = new double[11];
-        Uitkomst = (a + b + c + d + e + f + g + h + i + j) / 10;
+        uitkomst = (a + b + c + d + e + f + g + h + i + j) / 10;
 
         //Initalisatie berekening gemiddelde
         gemiddelde[0] = a;
@@ -38,7 +38,7 @@ public class Opdracht1 extends Applet {
         gemiddelde[7] = h;
         gemiddelde[8] = i;
         gemiddelde[9] = j;
-        gemiddelde[10] = Uitkomst;
+        gemiddelde[10] = uitkomst;
 
         for (int teller = 0; teller < gemiddelde.length; teller++) {
         }
@@ -46,6 +46,9 @@ public class Opdracht1 extends Applet {
     }
 
     public void paint(Graphics g) {
-
+        for (int teller = 0; teller < gemiddelde.length; teller++) {
+            g.drawString("" + gemiddelde[teller],105,20 * teller + 20);
+        }
+        g.drawString("Gemiddelde: ",20,220);
     }
 }
