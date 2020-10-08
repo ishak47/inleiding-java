@@ -14,7 +14,7 @@ public class Opdracht2 extends Applet {
 
         for(teller = 10; teller <= 20; teller++) {
             x += 20;
-            g.drawString("" + teller, 30, x );
+            g.drawString("" + teller, x,30 );
         }
     }
 
