@@ -48,11 +48,10 @@ public class Opdracht3 extends Applet {
         }
     }
 
-    class DeleteListener implements ActionListener{
+    class DeleteListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            input[n].setText
+            input.setText("");
             repaint();
         }
     }
-
 }
