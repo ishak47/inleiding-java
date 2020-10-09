@@ -8,10 +8,9 @@ import java.awt.event.ActionListener;
 
 public class Opdracht4 extends Applet {
     //declaratie
-    TextField tekstvak;
     int nummer;
     int index;
-    int getallen[] = {4, 24, 65, 99, 108, 147, 172, 196, 222, 247};
+    int[] getallen = {4, 24, 65, 99, 108, 147, 172, 196, 222, 247};
     boolean controle = false;
     Label tekst = new Label("type een getal in tussen de 1-250, het mogen geen komma getallen zijn");
     TextField invoer = new TextField("", 20);
@@ -43,8 +42,8 @@ public class Opdracht4 extends Applet {
                     index = n;
                     controle = true;
                 }
-                repaint();
             }
+            repaint();
         }
     }
 }
