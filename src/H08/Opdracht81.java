@@ -20,6 +20,7 @@ public class Opdracht81 extends Applet {
         knop = new Button("ok");
        knop.addActionListener(new Knoplistener());
         add(knop);
+
         //resetknop
         resetknop = new Button("reset");
         resetknop.addActionListener(new KnopListener2());

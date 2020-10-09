@@ -75,7 +75,7 @@ public class Opdracht82 extends Applet {
             tekstvak.setText("mannen:"+ counter);
             tekstvak2.setText("vrouwen:"+ counter);
             potentieel.setText("potentiële vrouwelijke en mannenlijke leerlingen:"+ counter);
-            totaal.setText("totaal"+uitkomst);
+            totaal.setText("totaal:"+uitkomst);
             counter++;
             repaint();
         }
