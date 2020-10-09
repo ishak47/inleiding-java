@@ -15,19 +15,18 @@ public class Opdracht6 extends Applet {
     Button ok = new Button("enter");
     Label label = new Label(" Voer een getal in tussen de 1-10. het mag geen komma bevatten ");
     TextField tekstvak = new TextField("",20);
-
-
+    String tekst;
 
     public void init() {
         ok.addActionListener(new OkListener());
         add(ok);
         add(tekstvak);
         add(label);
-
+        tekst = "";
     }
 
     public void paint(Graphics g) {
-        g.drawString("Het ingevulde getal komt "+ aantal +" keer voor in de programma",45,70);
+        g.drawString("" + tekst,45,70);
     }
 
     private class OkListener implements ActionListener{
@@ -40,7 +39,9 @@ public class Opdracht6 extends Applet {
                 }
             }
             if (nummer > 10){
-
+                tekst= "het is niet tussen de 1 en 10";
+            } else{
+                tekst = "Het ingevulde getal komt "+ aantal +" keer voor in de programma";
             }
             repaint();
         }
