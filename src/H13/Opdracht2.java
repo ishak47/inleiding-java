@@ -10,7 +10,7 @@ public class Opdracht2 extends Applet {
     }
 
     public void paint(Graphics g) {
-    StenenMuur (g,20,20,1000,500);
+    StenenMuur (g,20,20,1000,480);
     }
 
     void  StenenMuur (Graphics g, int x, int y, int w, int h){
@@ -18,6 +18,7 @@ public class Opdracht2 extends Applet {
     //kleur baksteen
     g.setColor(new Color(100, 100, 100));
     g.fillRect(x,y,w,h);
+    g.setColor(new Color(150, 50, 50));
 
     //  bakstenen
     for (int teller = 0; teller <= ((h-3) / 18) - 1; teller++ ){
