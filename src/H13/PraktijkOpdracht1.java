@@ -16,5 +16,13 @@ public class PraktijkOpdracht1 extends Applet {
         if (h < w * 1.5) {
             h = w / 10 * 15;
         }
+
+        //de stam
+        g.setColor(new Color(110,44,31));
+        g.fillRect(x + (w / 5 * 2), y + (w / 5 * 2), w / 5, h - (w / 5 * 5));
+
+        //de bladeren
+        g.setColor(new Color(3, 66, 16));
+        g.fillOval(x,y,w,w);
     }
 }
