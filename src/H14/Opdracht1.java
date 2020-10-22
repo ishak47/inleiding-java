@@ -31,6 +31,11 @@ public class Opdracht1 extends Applet {
     class delen implements ActionListener{
 
         public void actionPerformed(ActionEvent e) {
+        kleurkeuze = Math.random() * 3 ;
+        int kleurKeuze = (int) kleurkeuze ;
+
+        cijferkeuze= Math.random()* 12;
+        int cijferKeuze = (int) cijferkeuze;
 
         }
     }
