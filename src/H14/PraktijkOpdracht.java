@@ -2,6 +2,8 @@ package H14;
 
 import java.applet.Applet;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 
 public class PraktijkOpdracht extends Applet {
@@ -28,7 +30,7 @@ public class PraktijkOpdracht extends Applet {
         tekst = tekst1;
 
         //knoppen
-       // speel.addActionListener(new speler());
+        speel.addActionListener(new speler());
        // opnieuw.addActionListener(new opnieuwListener());
         add(tekstvak);
         add(speel);
@@ -49,7 +51,7 @@ public class PraktijkOpdracht extends Applet {
         }
     }
 
-    void bot (int spelerskeuze, int ajaxs) {
+    int bot (int spelerskeuze, int ajaxs) {
         int bot = 0;
         double random = Math.random() * 3 + 1;
         int r = (int) random;
@@ -98,8 +100,8 @@ public class PraktijkOpdracht extends Applet {
                 case 3:
                     bot = 3;
             }
-        }else if (ajaxs == 18 || ajaxs == 14 || ajaxs == 10 || ajaxs == 6 || ajaxs == 2){
-            switch (spelerskeuze){
+        }else if (ajaxs == 18 || ajaxs == 14 || ajaxs == 10 || ajaxs == 6 || ajaxs == 2) {
+            switch (spelerskeuze) {
                 case 1:
                     bot = r;
                     break;
@@ -108,6 +110,16 @@ public class PraktijkOpdracht extends Applet {
                 case 3:
                     bot = 2;
             }
+        }else {
+            bot = r;
+        }
+        return bot;
+    }
+
+    private class speler implements ActionListener{
+
+        public void actionPerformed(ActionEvent e) {
+
         }
     }
 }
