@@ -35,14 +35,16 @@ public class PraktijkOpdracht extends Applet {
 
         //ajax logo
         URL pad = PraktijkOpdracht.class.getResource("./resources/");
-        afbeelding= getImage(pad, "ajax logo H14.jpg");
+        afbeelding= getImage(pad, "ajax logo.png");
     }
 
     public void paint(Graphics g) {
 
         g.drawString(tekst,70,50);
         g.drawString("er zijn nog: " + ajax  + " ajax logo's ",60,70);
+
+        for (int a = 0; a < ajax; a++){
+        g.drawImage(afbeelding, 60,85, 40, 40, this);
+        }
     }
-
-
 }
