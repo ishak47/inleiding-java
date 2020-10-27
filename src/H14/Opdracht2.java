@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Opdracht2 extends Applet {
 
@@ -23,11 +24,15 @@ public class Opdracht2 extends Applet {
     int starten = 0;
 
     public void init() {
-    setSize(700,600);
+
+        setSize(700,600);
 
     spelen = new Button("spelen");
     spelen.addActionListener(new speler());
     add(spelen);
+
+    pad = Opdracht2.class.getResource("./resources/");
+    geluid = getAudioClip(pad, "applaus.wav");
 
     deck = new String[52];
     help = new boolean[52];
@@ -70,11 +75,26 @@ public class Opdracht2 extends Applet {
         }
     }
 
-    private class speler implements ActionListener{
+    public static void Random(String[] randomize) {
 
-        public void actionPerformed(ActionEvent e) {
+        Random randomize1;
 
+        for (int i = 0; i < randomize.length; i++) {
+            randomize1 = new Random();
+            int randPos = randomize1.nextInt(randomize.length);
+            String tmp = randomize[i];
+            randomize[i] = randomize[randPos];
+            randomize[randPos] = tmp;
         }
     }
 
+
+    private class speler implements ActionListener{
+
+        public void actionPerformed(ActionEvent e) {
+            Random(deck);
+            repaint();
+            geluid.play();
+        }
+    }
 }
