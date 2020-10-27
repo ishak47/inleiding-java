@@ -56,7 +56,18 @@ public class Opdracht2 extends Applet {
     }
 
     public void paint(Graphics g) {
+        g.drawString("Speler 1",20,50);
+        g.drawString("Speler 2",120,50);
+        g.drawString("Speler 3",230,50);
+        g.drawString("Speler 4",340,50);
 
+        int b = 0;
+        for (int a = 0; a < 4; a++) {
+            for (int c = 0; c < 13; c++) {
+                g.drawString(deck[b],20 + 110 * a, 70 + 12 * c);
+                b++;
+            }
+        }
     }
 
     private class speler implements ActionListener{
