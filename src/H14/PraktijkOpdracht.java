@@ -3,6 +3,8 @@ package H14;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 
 public class PraktijkOpdracht extends Applet {
@@ -11,7 +13,7 @@ public class PraktijkOpdracht extends Applet {
     Button speel = new Button("spelen");
     Button opnieuw = new Button("nieuwe spel");
     String tekst = "";
-    String tekst1 = "voer 1, 2 of 3 in en druk op speel";
+    String tekst1 = "voer getal 1, 2 of 3 in en druk op spelen";
     String winnaar = "Winnaar!!";
 
     int ajax = 23;
@@ -26,8 +28,10 @@ public class PraktijkOpdracht extends Applet {
 
     setSize(750,560);
 
+    tekst = tekst1;
+
         //knoppen
-     //    speel.addActionListener(new speler());
+       //  speel.addActionListener(new speler());
      //   opnieuw.addActionListener(new opnieuwListener());
         add(tekstvak);
         add(speel);
@@ -44,7 +48,8 @@ public class PraktijkOpdracht extends Applet {
         g.drawString("er zijn nog: " + ajax  + " ajax logo's ",60,70);
 
         for (int a = 0; a < ajax; a++){
-        g.drawImage(afbeelding, 60,85, 40, 40, this);
+            g.drawImage(afbeelding , 100 + 50 * (a % 4), 100 + 50 * (a / 4), 50, 50, this);
         }
     }
+
 }
