@@ -25,7 +25,7 @@ public class Opdracht2 extends Applet {
 
     public void init() {
 
-        setSize(700,600);
+    setSize(700,600);
 
     spelen = new Button("spelen");
     spelen.addActionListener(new speler());
@@ -61,6 +61,7 @@ public class Opdracht2 extends Applet {
     }
 
     public void paint(Graphics g) {
+
         g.drawString("Speler 1",20,50);
         g.drawString("Speler 2",120,50);
         g.drawString("Speler 3",230,50);
@@ -87,7 +88,6 @@ public class Opdracht2 extends Applet {
             randomize[randPos] = tmp;
         }
     }
-
 
     private class speler implements ActionListener{
 
