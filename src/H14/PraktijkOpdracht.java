@@ -31,7 +31,7 @@ public class PraktijkOpdracht extends Applet {
 
         //knoppen
         speel.addActionListener(new speler());
-       // opnieuw.addActionListener(new opnieuwListener());
+        opnieuw.addActionListener(new opnieuwListener());
         add(tekstvak);
         add(speel);
         add(opnieuw);
@@ -44,7 +44,7 @@ public class PraktijkOpdracht extends Applet {
     public void paint(Graphics g) {
 
         g.drawString(tekst, 70, 50);
-        g.drawString("er zijn nog: " + ajax + " ajax logo's ", 60, 70);
+        g.drawString("er zijn nog: " + ajax + " ajax logo's ", 68, 70);
 
         for (int a = 0; a < ajax; a++) {
             g.drawImage(afbeelding, 100 + 50 * (a % 4), 100 + 50 * (a / 4), 50, 50, this);
@@ -120,6 +120,17 @@ public class PraktijkOpdracht extends Applet {
 
         public void actionPerformed(ActionEvent e) {
 
+        }
+    }
+    class opnieuwListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            tekstvak.setText("");
+            tekst1 = tekst1;
+            ajax = 23;
+            lost = false;
+            gameover = false;
+            turn = true;
+            repaint();
         }
     }
 }
