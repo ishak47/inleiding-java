@@ -51,7 +51,7 @@ public class PraktijkOpdracht extends Applet {
         }
     }
 
-    int bot (int spelerskeuze, int ajaxs) {
+    int botspeelt(int spelerskeuze, int ajaxs) {
         int bot = 0;
         double random = Math.random() * 3 + 1;
         int r = (int) random;
@@ -91,7 +91,7 @@ public class PraktijkOpdracht extends Applet {
                     bot = r;
                     break;
             }
-        }else if (ajaxs == 19 || ajaxs == 15 || ajaxs == 11 || ajaxs == 7 || ajaxs == 3) {
+        } else if (ajaxs == 19 || ajaxs == 15 || ajaxs == 11 || ajaxs == 7 || ajaxs == 3) {
             switch (spelerskeuze) {
                 case 1:
                     bot = 1;
@@ -100,7 +100,7 @@ public class PraktijkOpdracht extends Applet {
                 case 3:
                     bot = 3;
             }
-        }else if (ajaxs == 18 || ajaxs == 14 || ajaxs == 10 || ajaxs == 6 || ajaxs == 2) {
+        } else if (ajaxs == 18 || ajaxs == 14 || ajaxs == 10 || ajaxs == 6 || ajaxs == 2) {
             switch (spelerskeuze) {
                 case 1:
                     bot = r;
@@ -110,27 +110,31 @@ public class PraktijkOpdracht extends Applet {
                 case 3:
                     bot = 2;
             }
-        }else {
+        } else {
             bot = r;
         }
         return bot;
     }
 
-    private class speler implements ActionListener{
+    private class speler implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
 
-        }
-    }
-    class opnieuwListener implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-            tekstvak.setText("");
-            tekst1 = tekst1;
-            ajax = 23;
-            lost = false;
-            gameover = false;
-            turn = true;
-            repaint();
+            int botzet = 0;
+            int spelerzet = 0;
+
+            if (spelerzet == 1 || spelerzet == 2 || spelerzet == 3) {
+                botzet = botspeelt(spelerzet, ajax);
+                turn = true;
+                ajax -= spelerzet;
+                if (ajax <= 0 && gameover == false) {
+                    if (true == true) {
+                        lost = true;
+                        gameover = true;
+                    }
+                }
+            }
         }
     }
 }
+
