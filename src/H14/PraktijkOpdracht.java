@@ -161,8 +161,6 @@ public class PraktijkOpdracht extends Applet {
                     tekst = "VERLIEZER!";
                 }
             }
-
-
             tekstvak.setText("");
             repaint();
         }
