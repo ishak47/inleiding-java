@@ -1,5 +1,6 @@
 package H14;
 
+import javax.swing.*;
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,10 +17,10 @@ public class PraktijkOpdracht extends Applet {
     String winnaar = "Winnaar!!";
 
     int ajax = 23;
-    boolean error = false;
     boolean turn = false;
     boolean lost = false;
     boolean gameover = false;
+    boolean error = false;
 
     Image afbeelding;
 
@@ -116,15 +117,21 @@ public class PraktijkOpdracht extends Applet {
         return bot;
     }
 
-    private class speler implements ActionListener {
+     class speler implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
 
-            int botzet = 0;
-            int spelerzet = 0;
+            int spelerzet = 0 ;
+            int bot = 0;
 
-            if (spelerzet == 1 || spelerzet == 2 || spelerzet == 3) {
-                botzet = botspeelt(spelerzet, ajax);
+            try {
+                spelerzet = Integer.parseInt(tekstvak.getText());
+            } catch (Exception s) {
+                error = true;
+            }
+
+            if (spelerzet== 1 || spelerzet == 2 || spelerzet == 3) {
+                bot = botspeelt(spelerzet, ajax);
                 turn = true;
                 ajax -= spelerzet;
                 if (ajax <= 0 && gameover == false) {
@@ -133,8 +140,43 @@ public class PraktijkOpdracht extends Applet {
                         gameover = true;
                     }
                 }
+                turn = false;
+                ajax -= bot;
+                if (ajax <= 0 && gameover == false) {
+                    lost = false;
+                    gameover = true;
+                }
+
+                tekst = "Bot koos " + bot + " Smileys weg te halen";
+
+            }else {
+                tekst = "ERROR: dit getal kan niet verwerkt worden voer een getal tussen de 1-3";
+                repaint();
+            }
+
+            if (gameover == true) {
+                if (lost == false) {
+                    tekst = winnaar;
+                } else {
+                    tekst = "VERLIEZER!";
+                }
+            }
+
+
+            tekstvak.setText("");
+            repaint();
+        }
+    }
+        class opnieuwListener implements ActionListener {
+
+            public void actionPerformed(ActionEvent e) {
+                ajax = 23;
+                tekstvak.setText("");
+                tekst = tekst1;
+                gameover = false;
+                lost = false;
+                turn = true;
+                repaint();
             }
         }
     }
-}
-
