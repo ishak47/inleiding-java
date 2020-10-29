@@ -9,18 +9,19 @@ import java.net.URL;
 
 public class PraktijkOpdracht extends Applet {
 
-    TextField tekstvak = new TextField("", 5);
-    Button speel = new Button("spelen");
-    Button opnieuw = new Button("nieuwe spel");
-    String tekst = "";
-    String tekst1 = "voer getal 1, 2 of 3 in en druk op spelen";
-    String winnaar = "Winnaar!!";
-
     int ajax = 23;
     boolean turn = false;
     boolean lost = false;
     boolean gameover = false;
     boolean error = false;
+
+    TextField tekstvak = new TextField("", 5);
+    Button speel = new Button("spelen");
+    Button opnieuw = new Button("nieuwe spel");
+    String tekst = "";
+    String tekst1 = "voer getal 1, 2 of 3 in en druk op spelen";
+    String aantalLogo = " er zijn nog: " + ajax + " ajax logo's ";
+    String winnaar = "Winnaar!!";
 
     Image afbeelding;
 
@@ -45,7 +46,7 @@ public class PraktijkOpdracht extends Applet {
     public void paint(Graphics g) {
 
         g.drawString(tekst, 70, 50);
-        g.drawString("er zijn nog: " + ajax + " ajax logo's ", 68, 70);
+        g.drawString( aantalLogo , 68, 70);
 
         for (int a = 0; a < ajax; a++) {
             g.drawImage(afbeelding, 100 + 50 * (a % 4), 100 + 50 * (a / 4), 50, 50, this);
@@ -58,7 +59,7 @@ public class PraktijkOpdracht extends Applet {
         int r = (int) random;
 
         if (ajaxs == 23) {
-            switch (bot) {
+            switch (spelerskeuze) {
                 case 1:
                     bot = 1;
                     break;
@@ -124,14 +125,10 @@ public class PraktijkOpdracht extends Applet {
             int spelerzet = 0 ;
             int bot = 0;
 
-            try {
+            if(Integer.parseInt(tekstvak.getText()) == 1 || Integer.parseInt(tekstvak.getText()) == 2 || Integer.parseInt(tekstvak.getText()) ==3) {
                 spelerzet = Integer.parseInt(tekstvak.getText());
-            } catch (Exception s) {
-                error = true;
-            }
+                bot = botspeelt(spelerzet,ajax);
 
-            if (spelerzet== 1 || spelerzet == 2 || spelerzet == 3) {
-                bot = botspeelt(spelerzet, ajax);
                 turn = true;
                 ajax -= spelerzet;
                 if (ajax <= 0 && gameover == false) {
@@ -147,10 +144,10 @@ public class PraktijkOpdracht extends Applet {
                     gameover = true;
                 }
 
-                tekst = "Bot koos " + bot + " Smileys weg te halen";
+                tekst = "Bot pakte " + bot + " Smileys weg te halen";
 
             }else {
-                tekst = "ERROR: dit getal kan niet verwerkt worden voer een getal tussen de 1-3";
+                tekst = " ERROR. dit is een ongeldige getal. kies een getal tussen de 1 en 3 ";
                 repaint();
             }
 
