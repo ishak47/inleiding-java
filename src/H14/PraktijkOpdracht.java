@@ -9,6 +9,7 @@ import java.net.URL;
 
 public class PraktijkOpdracht extends Applet {
 
+    //initialisatie
     int ajax = 23;
     boolean turn = false;
     boolean lost = false;
@@ -30,7 +31,6 @@ public class PraktijkOpdracht extends Applet {
 
     private URL trompetPad;
     private AudioClip trompetGeluid;
-
 
     public void init() {
 
@@ -180,7 +180,8 @@ public class PraktijkOpdracht extends Applet {
             }
             if (tekst == winnaar){
                 geluid.play();
-            }if (tekst == verliezer){
+            }
+            if (tekst == verliezer){
                 trompetGeluid.play();
             }
 
