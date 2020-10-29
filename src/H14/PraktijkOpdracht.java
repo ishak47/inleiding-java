@@ -1,8 +1,5 @@
 package H14;
 
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
-
-import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.*;
@@ -30,6 +27,8 @@ public class PraktijkOpdracht extends Applet {
 
     private URL pad;
     private AudioClip geluid;
+
+    private URL trompetPad;
     private AudioClip trompetGeluid;
 
 
@@ -40,11 +39,11 @@ public class PraktijkOpdracht extends Applet {
         tekst = tekst1;
 
         //geluid
-        pad = PraktijkOpdracht.class.getResource("./resources/");
+        pad = PraktijkOpdracht.class.getResource("resources/");
         geluid = getAudioClip(pad, "applaus.wav");
 
-        pad = PraktijkOpdracht.class.getResource("./resources/");
-        trompetGeluid=getAudioClip(pad, "trombone.wav");
+        trompetPad = PraktijkOpdracht.class.getResource("resources/");
+        trompetGeluid= getAudioClip(trompetPad, "Sad-Trombone-Gaming-Sound-Effect-_HD_.wav");
 
         //knoppen
         speel.addActionListener(new speler());
@@ -170,7 +169,7 @@ public class PraktijkOpdracht extends Applet {
                 if (lost == false) {
                     tekst = winnaar;
                 } else {
-                    tekst = "VERLIEZER!";
+                    tekst = verliezer;
                 }
             }
 
@@ -181,11 +180,10 @@ public class PraktijkOpdracht extends Applet {
             }
             if (tekst == winnaar){
                 geluid.play();
-            }
-
-            if (tekst == verliezer){
+            }if (tekst == verliezer){
                 trompetGeluid.play();
             }
+
             tekstvak.setText("");
             repaint();
         }
