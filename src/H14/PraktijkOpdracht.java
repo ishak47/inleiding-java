@@ -1,7 +1,10 @@
 package H14;
 
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+
 import javax.swing.*;
 import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,14 +24,27 @@ public class PraktijkOpdracht extends Applet {
     String tekst1 = "voer getal 1, 2 of 3 in en druk op spelen";
     String aantalLogo = " er zijn nog: " + ajax + " ajax logo's ";
     String winnaar = "Winnaar!!";
+    String verliezer = "VERLIEZER!";
 
     Image afbeelding;
+
+    private URL pad;
+    private AudioClip geluid;
+    private AudioClip trompetGeluid;
+
 
     public void init() {
 
         setSize(750, 560);
 
         tekst = tekst1;
+
+        //geluid
+        pad = PraktijkOpdracht.class.getResource("./resources/");
+        geluid = getAudioClip(pad, "applaus.wav");
+
+        pad = PraktijkOpdracht.class.getResource("./resources/");
+        trompetGeluid=getAudioClip(pad, "trombone.wav");
 
         //knoppen
         speel.addActionListener(new speler());
@@ -163,6 +179,13 @@ public class PraktijkOpdracht extends Applet {
             if (ajax <= 0 ){
                 aantalLogo= "";
             }
+            if (tekst == winnaar){
+                geluid.play();
+            }
+
+            if (tekst == verliezer){
+                trompetGeluid.play();
+            }
             tekstvak.setText("");
             repaint();
         }
@@ -171,6 +194,7 @@ public class PraktijkOpdracht extends Applet {
 
             public void actionPerformed(ActionEvent e) {
                 ajax = 23;
+                aantalLogo = " er zijn nog: " + ajax + " ajax logo's ";
                 tekstvak.setText("");
                 tekst = tekst1;
                 gameover = false;
