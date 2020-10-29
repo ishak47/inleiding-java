@@ -13,7 +13,6 @@ public class PraktijkOpdracht extends Applet {
     boolean turn = false;
     boolean lost = false;
     boolean gameover = false;
-    boolean error = false;
 
     TextField tekstvak = new TextField("", 5);
     Button speel = new Button("spelen");
@@ -157,6 +156,12 @@ public class PraktijkOpdracht extends Applet {
                 } else {
                     tekst = "VERLIEZER!";
                 }
+            }
+
+            aantalLogo = " er zijn nog: " + ajax + " ajax logo's ";
+
+            if (ajax <= 0 ){
+                aantalLogo= "";
             }
             tekstvak.setText("");
             repaint();
