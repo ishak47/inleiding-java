@@ -1,0 +1,47 @@
+Greenfoot run started: Mon Nov 02 08:54:56 CET 2020
+Greenfoot version: 3.6.1
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\Greenfoot\jdk
+----
+Opening project: C:\Users\ishak\Carp
+1604303775607: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+java.io.FileNotFoundException while reading import cache: C:\Users\ishak\greenfoot\import-cache.xml (Het systeem kan het opgegeven bestand niet vinden)
+====
+
+====
+Greenfoot run started: Mon Nov 02 09:00:06 CET 2020
+Greenfoot version: 3.6.1
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\Greenfoot\jdk
+----
+Opening project: C:\Users\ishak\Carp
+1604304007966: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+Opening project: C:\Users\ishak\Garp
+1604304019368: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
+====
+
+====
+Greenfoot run started: Mon Nov 02 09:55:40 CET 2020
+Greenfoot version: 3.6.1
+Java version 11.0.2
+JavaFX version 11.0.2+1
+Virtual machine: OpenJDK 64-Bit Server VM 11.0.2+9 (Oracle Corporation)
+Running on: Windows 10 10.0 (amd64)
+Java Home: C:\Program Files\Greenfoot\jdk
+----
+Opening project: C:\Users\ishak\greenfoot\Garp
+1604308026041: Listening for JDWP connection on address: javadebug
+Connected to debug VM via dt_shmem transport...
+Communication with debug VM fully established.
